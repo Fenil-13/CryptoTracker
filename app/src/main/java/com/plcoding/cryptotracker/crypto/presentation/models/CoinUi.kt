@@ -1,4 +1,4 @@
-package com.plcoding.cryptotracker.crypto.presentation
+package com.plcoding.cryptotracker.crypto.presentation.models
 
 import android.icu.text.NumberFormat
 import androidx.annotation.DrawableRes
@@ -14,7 +14,7 @@ data class CoinUi(
     @DrawableRes val iconRes: Int,
     val marketCapUsd: DisplayableNumber,
     val priceUsd: DisplayableNumber,
-    val changePercent24hr: DisplayableNumber
+    val changePercent24Hr: DisplayableNumber
 )
 
 data class DisplayableNumber(
@@ -31,7 +31,7 @@ fun Coin.toCoinUi(): CoinUi {
         iconRes = getDrawableIdForCoin(symbol),
         marketCapUsd = marketCapUsd.toDisplayableNumber(),
         priceUsd = priceUsd.toDisplayableNumber(),
-        changePercent24hr = changePercent24hr.toDisplayableNumber()
+        changePercent24Hr = changePercent24Hr.toDisplayableNumber()
     )
 }
 
